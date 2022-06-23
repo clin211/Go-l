@@ -1,4 +1,4 @@
-module ambossador
+module ambassador
 
 go 1.17
 
