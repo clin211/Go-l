@@ -17,7 +17,7 @@ func main() {
 			return c.SendString("Hello " + c.Params("name"))
 			// => Hello john
 		}
-		return c.SendString("Where is john?")
+		return c.SendString("Where is john???")
 	})
 
 	app.Listen(":8000")
