@@ -2,6 +2,7 @@ package main
 
 import (
 	"ambassador/src/database"
+	"ambassador/src/routes"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -12,13 +13,7 @@ func main() {
 
 	app := fiber.New()
 
-	app.Get("/:name?", func(c *fiber.Ctx) error {
-		if c.Params("name") != "" {
-			return c.SendString("Hello " + c.Params("name"))
-			// => Hello john
-		}
-		return c.SendString("Where is john???")
-	})
+	routes.Setup(app)
 
 	app.Listen(":8000")
 }
