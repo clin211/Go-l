@@ -25,10 +25,6 @@ func Register(c *fiber.Ctx) error {
 		return err
 	}
 
-	fmt.Println("data:", data)
-	fmt.Println("password:", data.Password)
-	fmt.Println("password confirm:", data.PasswordConfirm)
-
 	if data.Password != data.PasswordConfirm {
 		c.Status(400)
 		return c.JSON(fiber.Map{
@@ -54,4 +50,39 @@ func Register(c *fiber.Ctx) error {
 		"message": "register success",
 		"data":    &user,
 	})
+}
+
+type Input struct {
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
+
+func Login(c *fiber.Ctx) error {
+	fmt.Println("login method")
+	data := new(Input)
+
+	if err := c.BodyParser(data); err != nil {
+		return err
+	}
+
+	fmt.Println("password:", []byte(data.Password))
+	var user models.User
+	database.DB.Where("email = ?", data.Email).First(&user)
+
+	if user.Id == 0 {
+		c.Status(fiber.StatusBadRequest)
+		return c.JSON(fiber.Map{
+			"code":    fiber.StatusBadRequest,
+			"message": "user not found!",
+		})
+	}
+	if err := bcrypt.CompareHashAndPassword(user.Password, []byte(data.Password)); err != nil {
+		c.Status(fiber.StatusBadRequest)
+		c.JSON(fiber.Map{
+			"code":    fiber.StatusBadRequest,
+			"message": "email or password entry error, please try agin.",
+		})
+	}
+
+	return c.JSON(user)
 }
