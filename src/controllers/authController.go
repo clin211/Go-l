@@ -5,7 +5,10 @@ import (
 	"ambassador/src/models"
 	"fmt"
 	"net/http"
+	"strconv"
+	"time"
 
+	"github.com/dgrijalva/jwt-go"
 	"github.com/gofiber/fiber/v2"
 	"golang.org/x/crypto/bcrypt"
 )
@@ -72,17 +75,49 @@ func Login(c *fiber.Ctx) error {
 	if user.Id == 0 {
 		c.Status(fiber.StatusBadRequest)
 		return c.JSON(fiber.Map{
-			"code":    fiber.StatusBadRequest,
+			"code":    http.StatusBadRequest,
 			"message": "user not found!",
 		})
 	}
-	if err := bcrypt.CompareHashAndPassword(user.Password, []byte(data.Password)); err != nil {
+	err := bcrypt.CompareHashAndPassword(user.Password, []byte(data.Password))
+	fmt.Print("err: ", err)
+	if err != nil {
 		c.Status(fiber.StatusBadRequest)
-		c.JSON(fiber.Map{
-			"code":    fiber.StatusBadRequest,
+		return c.JSON(fiber.Map{
+			"code":    http.StatusBadRequest,
 			"message": "email or password entry error, please try agin.",
 		})
 	}
 
-	return c.JSON(user)
+	var payload = jwt.StandardClaims{
+		Subject:   strconv.Itoa(int(user.Id)),
+		ExpiresAt: time.Now().Add(time.Hour * 24).Unix(),
+	}
+
+	token, error := jwt.NewWithClaims(jwt.SigningMethodHS256, payload).SignedString([]byte("secret"))
+
+	if error != nil {
+		c.Status(fiber.ErrBadRequest.Code)
+		return c.JSON(fiber.Map{
+			"code":    http.StatusBadRequest,
+			"message": "Invalid Credentials",
+		})
+	}
+
+	cookie := fiber.Cookie{
+		Name:     "jwt",
+		Value:    token,
+		Expires:  time.Now().Add(time.Hour * 24),
+		HTTPOnly: true,
+	}
+
+	c.Cookie(&cookie)
+
+	return c.JSON(fiber.Map{
+		"code":    http.StatusOK,
+		"message": "success",
+		"data": fiber.Map{
+			"token": token,
+		},
+	})
 }
