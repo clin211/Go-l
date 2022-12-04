@@ -6,3 +6,12 @@
 {"level":"INFO","time":"2022-12-04T14:11:56.703+0800","caller":"logger/logger.go:64","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36","errors":"","cost":0.000032378}
 {"level":"INFO","time":"2022-12-04T14:11:57.243+0800","caller":"logger/logger.go:64","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36","errors":"","cost":0.000020975}
 {"level":"INFO","time":"2022-12-04T14:12:01.616+0800","caller":"logger/logger.go:64","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36","errors":"","cost":0.000029376}
+{"level":"INFO","time":"2022-12-04T14:16:20.668+0800","caller":"logger/logger.go:64","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36","errors":"","cost":0.000037315}
+{"level":"INFO","time":"2022-12-04T16:35:47.131+0800","caller":"go-web/main.go:68","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-12-04T16:35:47.133+0800","caller":"go-web/main.go:77","msg":"Server exiting"}
+{"level":"INFO","time":"2022-12-04T16:37:32.176+0800","caller":"go-web/main.go:67","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-12-04T16:37:32.177+0800","caller":"go-web/main.go:76","msg":"Server exiting"}
+{"level":"INFO","time":"2022-12-04T16:41:35.423+0800","caller":"go-web/main.go:67","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-12-04T16:41:35.423+0800","caller":"go-web/main.go:76","msg":"Server exiting"}
+{"level":"INFO","time":"2022-12-04T16:42:49.583+0800","caller":"go-web/main.go:68","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-12-04T16:42:49.583+0800","caller":"go-web/main.go:77","msg":"Server exiting"}

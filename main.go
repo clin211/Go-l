@@ -14,7 +14,6 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/spf13/viper"
 	"go.uber.org/zap"
 )
 
@@ -24,6 +23,7 @@ func main() {
 		fmt.Printf("initial settings failed, err:%v\n", err)
 		return
 	}
+	println("start")
 	// 2.初始化日志
 	if err := logger.Init(); err != nil {
 		fmt.Printf("initial logger failed, err:%v\n", err)
@@ -46,7 +46,7 @@ func main() {
 	r := routes.Setup()
 	// 6.启动服务（优雅关机）
 	srv := &http.Server{
-		Addr:    fmt.Sprintf(":%d", viper.GetInt("app.port")),
+		Addr:    fmt.Sprintf(":%d", settings.Conf.Port),
 		Handler: r,
 	}
 

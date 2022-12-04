@@ -18,6 +18,13 @@ func Setup() *gin.Engine {
 			"data":    []string{},
 		})
 	})
+	r.GET("/health", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, map[string]interface{}{
+			"code":    http.StatusOK,
+			"message": "ok",
+			"data":    []string{},
+		})
+	})
 
 	return r
 }
