@@ -7,16 +7,19 @@ import (
 	"github.com/spf13/viper"
 )
 
-var Conf = new(AppConfig)
+var Conf = new(Config)
 
+type Config struct {
+	App    AppConfig `mapstructure:"app"`
+	Log    LogConfig `mapstructure:"log"`
+	*Mysql `mapstructure:"mysql"`
+	*Redis `mapstructure:"redis"`
+}
 type AppConfig struct {
-	Name       string `mapstructure:"name"`
-	Mode       string `mapstructure:"mode"`
-	Version    string `mapstructure:"version"`
-	Port       int    `mapstructure:"port"`
-	*LogConfig `mapstructure:"log"`
-	*Mysql     `mapstructure:"mysql"`
-	*Redis     `mapstructure:"redis"`
+	Name    string `mapstructure:"name"`
+	Mode    string `mapstructure:"mode"`
+	Version string `mapstructure:"version"`
+	Port    int    `mapstructure:"port"`
 }
 
 type LogConfig struct {

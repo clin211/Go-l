@@ -15,3 +15,17 @@
 {"level":"INFO","time":"2022-12-04T16:41:35.423+0800","caller":"go-web/main.go:76","msg":"Server exiting"}
 {"level":"INFO","time":"2022-12-04T16:42:49.583+0800","caller":"go-web/main.go:68","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2022-12-04T16:42:49.583+0800","caller":"go-web/main.go:77","msg":"Server exiting"}
+{"level":"INFO","time":"2022-12-04T16:48:35.855+0800","caller":"go-web/main.go:68","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-12-04T16:48:35.857+0800","caller":"go-web/main.go:77","msg":"Server exiting"}
+{"level":"INFO","time":"2022-12-04T16:48:46.936+0800","caller":"logger/logger.go:64","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.000533811}
+{"level":"INFO","time":"2022-12-04T16:49:36.376+0800","caller":"go-web/main.go:69","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-12-04T16:49:36.376+0800","caller":"go-web/main.go:78","msg":"Server exiting"}
+{"level":"INFO","time":"2022-12-04T16:51:38.276+0800","caller":"go-web/main.go:68","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-12-04T16:51:38.278+0800","caller":"go-web/main.go:77","msg":"Server exiting"}
+{"level":"INFO","time":"2022-12-04T16:51:47.664+0800","caller":"logger/logger.go:64","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.000054184}
+{"level":"INFO","time":"2022-12-04T16:53:46.389+0800","caller":"go-web/main.go:68","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-12-04T16:53:46.391+0800","caller":"go-web/main.go:77","msg":"Server exiting"}
+{"level":"INFO","time":"2022-12-04T16:53:52.500+0800","caller":"logger/logger.go:64","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.000049435}
+{"level":"INFO","time":"2022-12-04T16:53:53.275+0800","caller":"logger/logger.go:64","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.00008039}
+{"level":"INFO","time":"2022-12-04T16:53:58.576+0800","caller":"logger/logger.go:64","msg":"/health","status":200,"method":"GET","path":"/health","query":"","ip":"::1","user-agent":"PostmanRuntime/7.29.2","errors":"","cost":0.000027598}
+{"level":"INFO","time":"2022-12-04T16:54:22.011+0800","caller":"logger/logger.go:64","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36","errors":"","cost":0.000035159}

@@ -46,7 +46,7 @@ func main() {
 	r := routes.Setup()
 	// 6.启动服务（优雅关机）
 	srv := &http.Server{
-		Addr:    fmt.Sprintf(":%d", settings.Conf.Port),
+		Addr:    fmt.Sprintf(":%d", settings.Conf.App.Port),
 		Handler: r,
 	}
 

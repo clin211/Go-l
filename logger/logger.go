@@ -21,7 +21,7 @@ func Init() (err error) {
 	writeSyncer := getLogWriter()
 	encoder := getEncoder()
 	var l = new(zapcore.Level)
-	err = l.UnmarshalText([]byte(settings.Conf.LogConfig.Level))
+	err = l.UnmarshalText([]byte(settings.Conf.Log.Level))
 	if err != nil {
 		return
 	}
@@ -44,10 +44,10 @@ func getEncoder() zapcore.Encoder {
 
 func getLogWriter() zapcore.WriteSyncer {
 	lumberJackLogger := &lumberjack.Logger{
-		Filename:   settings.Conf.Filename,
-		MaxSize:    settings.Conf.MaxSize,
-		MaxBackups: settings.Conf.MaxBackups,
-		MaxAge:     settings.Conf.MaxAge,
+		Filename:   settings.Conf.Log.Filename,
+		MaxSize:    settings.Conf.Log.MaxSize,
+		MaxBackups: settings.Conf.Log.MaxBackups,
+		MaxAge:     settings.Conf.Log.MaxAge,
 	}
 	return zapcore.AddSync(lumberJackLogger)
 }
