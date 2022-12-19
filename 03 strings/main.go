@@ -35,6 +35,7 @@ func printName() {
 func handleMatchString() {
 	word := "go language"
 
+	// regexp.MustCompile() 函数用于创建正则表达式，MatchString()函数返回一个布尔值，指示模式是否与字符串匹配
 	whitespace := regexp.MustCompile(`\s`).MatchString(word)
 	println("is space: ", whitespace) // true
 }
