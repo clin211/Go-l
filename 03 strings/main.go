@@ -2,12 +2,14 @@ package main
 
 import (
 	"fmt"
+	"regexp"
 	"strings"
 )
 
 func main() {
 	practices()
 	printName()
+	handleMatchString()
 }
 
 func practices() {
@@ -27,4 +29,12 @@ func printName() {
 	fmt.Scanln(&name)                             // 获取用户输入的值
 	join := strings.ToUpper(name[0:1]) + name[1:] // 首字母大写
 	fmt.Printf("hello %s\n", join)
+}
+
+// 使用 Regex 验证字符串是否包含空格
+func handleMatchString() {
+	word := "go language"
+
+	whitespace := regexp.MustCompile(`\s`).MatchString(word)
+	println("is space: ", whitespace) // true
 }
