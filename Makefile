@@ -1,3 +1,5 @@
-github: git push origin main:baseic
+github:
+	git push origin main:baseic
 
-gitee: git push gitee main:go
+gitee:
+	git push gitee main:go
